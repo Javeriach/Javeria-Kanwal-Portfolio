@@ -15,7 +15,7 @@ import Projects from "./components/Projects";
 function App() {
 
   useEffect(() => {
-    Aos.init({ duration: 2000 }); // Animation duration set to 1000ms (1 second)
+    Aos.init(); // Animation duration set to 1000ms (1 second)
   
     return () => {
       Aos.refreshHard(); // Optional: Resets all animations on unmount

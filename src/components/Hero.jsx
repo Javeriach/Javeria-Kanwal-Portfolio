@@ -10,7 +10,7 @@ const Hero = () => {
   
   return (
     <section
-      className="flex  flex-col-reverse items-center min-[920px]:flex-row justify-around py-16 px-8 min-[920px]:px-16  min-[920px]:flex-row h-[700px] min-[920px]:h-[600px] bg-cover bg-center bg-no-repeat"
+      className="overflow-x-hidden flex  flex-col-reverse items-center min-[920px]:flex-row justify-around py-16 px-8 min-[920px]:px-16  min-[920px]:flex-row h-[700px] min-[920px]:h-[600px] bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       {/* Text Section */}

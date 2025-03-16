@@ -2,8 +2,9 @@ import { Box, Typography, TextField, Button } from '@mui/material';
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
-import { Details, Email, LocationCity } from '@mui/icons-material';
+import { Details, Email, GitHub, LocationCity } from '@mui/icons-material';
 import DetailsIcon from '@mui/icons-material/Details';
+import { Link } from 'react-router-dom';
 const ContactMe = () => {
   const form = useRef();
 
@@ -25,16 +26,16 @@ const ContactMe = () => {
   };
 
   return (
-    <div className="w-full h-[500px] flex flex-col md:flex-row justify-center md:justify-around items-center ">
-      <div className=' text-black flex flex-col  font-semibold m-5 h-full pt-[90px]'>
+    <div className="w-full h-[600px] md:h-[500px] flex flex-col md:flex-row  items-center justify-center md:justify-around  ">
+      <div className=' text-black flex flex-col  font-semibold m-5 h-full md:pt-[90px]'>
         <h1 className='text-center text-[30px] font-bold text-pink-500'>Personal Details</h1>
         <label className='mr-[50px]'><LocationCity/> Lahore,Punjab,Pakistan</label>
         <label><Email/> javeriakanwal383@gmail.com</label>
-    
+        <label><GitHub/> <Link to="https://github.com/Javeriach">https://github.com/Javeriach</Link></label>
       </div>
       <form
         ref={form}
-        className=" h-[400px] w-[400px] px-10 flex flex-col gap-2 p-3 border-2 text-black border-black rounded-md"
+        className=" h-[400px] w-[400px] mb-[40px] md:mb-0 px-10 flex flex-col gap-2 p-3 border-2 text-black border-black rounded-md"
         onSubmit={sendEmail}
       >
         <h1 className="text-center text-pink-600 text-2xl font-bold">

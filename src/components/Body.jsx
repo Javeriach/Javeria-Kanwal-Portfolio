@@ -13,14 +13,14 @@ function Body() {
   return (
     <div>
       <Navbar />
-      <div className=" text-white pt-11">
+      <div className=" text-white pt-11 overflow-x-hidden" >
         
         <Hero />
         <AboutMe />
         <Portfolio/>
         <ServiceCards />
         <ContactMe />
-        <footer className='h-[80px] bg-black text-white flex justify-center items-center'>
+        <footer className='h-[80px]  bg-black text-white flex justify-center items-center'>
             All rights reserved|Developed by Javeria Kanwal
         </footer>
        

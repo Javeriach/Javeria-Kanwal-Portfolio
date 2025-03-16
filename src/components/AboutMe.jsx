@@ -21,7 +21,7 @@ const AboutMe = () => {
   return (
     <div className=" py-10 px-6 flex flex-col md:flex-row items-center bg-gray-100" id="about-me">
       {/* Image Section */}
-      <div className="w-full md:w-1/2  h-[400px] flex justify-center">
+      <div className="w-full md:w-1/2  h-[400px] hidden md:flex justify-center">
         <img 
     src={JaveriaKanwal}
           alt="Profile" 
