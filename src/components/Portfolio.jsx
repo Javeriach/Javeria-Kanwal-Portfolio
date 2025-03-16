@@ -1,55 +1,53 @@
-import React from "react";
-import ShazaibTechnologies from "../assets/ShazaibTechnologies.webp";
-import WeatherApp from "../assets/WeatherApp.png";
-import QuranApp from "../assets/QuranApp.png";
-import ImageGallery from "../assets/ImageGallery.png";
+import React, { useEffect } from "react";
 import TriviaMaster from "../assets/TriaviaMaster.png";
-import Tenzies from "../assets/Tenzies.png";
-import MovieWorld from "../assets/MovieWorld.png";
-import PasswordGenerater from "../assets/PasswordGenerater.png";
-import TaskTracker from "../assets/TaskTracker.png";
+import Tinder from '../assets/Tinder.webp';
+import Ecommerce from "../assets/Ecommerce.png";
+
 import { Link } from "react-router-dom";
-
-
-
-
+import Aos from "aos";
 
 
 const Portfolio = () => {
   const projects = [
-   
-    {
-      title: "Triavia Master",
-      category: "Education",
-      views: "201",
-      image: TriviaMaster, // Replace with actual image
-      link: "https://triavia-master-g5vt.vercel.app/",
-      githubUrl: "https://github.com/Javeriach/Triavia-Master/tree/master",
-      TechnologiesUsed:['HTML','CSS',"JavaScript","Reactjs"]
-    },
-    {
-      title: "Tenzies",
-      category: "Gaming",
-      views: "101",
-      image: Tenzies , // Replace with actual image
-      link: "https://tenzies-alpha-livid.vercel.app/",
-      githubUrl: "https://github.com/Javeriach/Tenzies",
-      TechnologiesUsed:['HTML','CSS',"JavaScript","Reactjs"]
-    },
-    {
-      title: "Movie World",
-      category: "Socail Media",
-      views: "101",
-      image: MovieWorld , // Replace with actual image
-      link: "https://movie-world-jcad.vercel.app/",
-      githubUrl: "https://github.com/Javeriach/MovieWorld",
-      TechnologiesUsed:['HTML','CSS',"JavaScript","Reactjs"]
-    }
+      {
+        title: 'Triavia Master',
+        category: 'Education',
+        views: '201',
+        image: TriviaMaster, // Replace with actual image
+        link: 'https://triavia-master-g5vt.vercel.app/',
+        githubUrl: 'https://github.com/Javeriach/Triavia-Master/tree/master',
+        TechnologiesUsed: ['HTML', 'CSS', 'JavaScript', 'Reactjs'],
+      },
+      {
+        title: 'Tinder',
+        category: 'Socail Media',
+        views: '101',
+        image: Tinder, // Replace with actual image
+        link: 'http://13.53.200.209/',
+        githubUrl: 'https://github.com/Javeriach/Tinder-Frontend-Code',
+        TechnologiesUsed: ['HTML', 'CSS', 'JavaScript', 'React.js','TailwindCss','Websockets','Node.js','Express.js','MongoDB'],
+      },
+      {
+        title: 'EShop',
+        category: 'Ecommerce',
+        views: '101',
+        image: Ecommerce, // Replace with actual image
+        link: 'http://13.49.246.169/',
+        githubUrl: 'https://github.com/Javeriach/Ecommerce-Frontend',
+        TechnologiesUsed: ['HTML', 'CSS', 'JavaScript', 'React.js','TailwindCss','Node.js','Express.js','MongoDB'],
+      },
   ];
+  
+
+  useEffect(() => {
+    Aos.init();
+  }, []);
+
+  
 
   return (
-    <div className="bg-gray-900 text-white py-12 px-4">
-      <div className="text-center mb-10">
+    <div className="bg-black text-white py-12 px-4">
+      <div className="text-center mb-10"  data-aos="fade-down">
         <p className="text-pink-500 uppercase text-sm tracking-wide">
           Visit My Portfolio and Keep Your Feedback
         </p>
@@ -58,11 +56,12 @@ const Portfolio = () => {
         </h2>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-8">
+      <div className="grid md:grid-cols-3 gap-8 overflow-x-hidden">
         {projects.map((project, index) => (
           <div
             key={index}
-            className="relative group overflow-hidden rounded-lg shadow-white shadow-sm bg-gray-800"
+            data-aos="fade-down"
+            className=" relative group overflow-hidden rounded-lg shadow-white shadow-sm bg-gray-800"
           >
             <img
               src={project.image}

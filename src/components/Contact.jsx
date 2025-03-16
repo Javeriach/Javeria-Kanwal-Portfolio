@@ -2,11 +2,12 @@ import { Box, Typography, TextField, Button } from '@mui/material';
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import toast from 'react-hot-toast';
+import { Details, Email, LocationCity } from '@mui/icons-material';
+import DetailsIcon from '@mui/icons-material/Details';
 const ContactMe = () => {
   const form = useRef();
 
   const sendEmail = (e) => {
-    console.log(form.current);
     e.preventDefault();
     emailjs
       .sendForm('service_sg0naxl', 'template_rvb3srm', form.current, {
@@ -14,17 +15,23 @@ const ContactMe = () => {
       })
       .then(
           () => {
-              console.log("hello");
           toast.success('Message Sent!!');
         },
         (error) => {
+
           console.log('FAILED...', error.text);
         }
       );
   };
 
   return (
-    <div className="w-full h-[500px] flex justify-center items-center ">
+    <div className="w-full h-[500px] flex flex-col md:flex-row justify-center md:justify-around items-center ">
+      <div className=' text-black flex flex-col  font-semibold m-5 h-full pt-[90px]'>
+        <h1 className='text-center text-[30px] font-bold text-pink-500'>Personal Details</h1>
+        <label className='mr-[50px]'><LocationCity/> Lahore,Punjab,Pakistan</label>
+        <label><Email/> javeriakanwal383@gmail.com</label>
+    
+      </div>
       <form
         ref={form}
         className=" h-[400px] w-[400px] px-10 flex flex-col gap-2 p-3 border-2 text-black border-black rounded-md"

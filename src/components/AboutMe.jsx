@@ -14,12 +14,12 @@ const AboutMe = () => {
     { name: 'React.js', icon: <DeveloperModeIcon fontSize="small" className="text-blue-900" /> },
     { name: 'Node.js', icon: <DeveloperModeIcon fontSize="small" className="text-green-700" /> },
     { name: 'MongoDB', icon: <DeveloperModeIcon fontSize="small" className="text-green-800" /> },
-    { name: 'Team Collaboration', icon: <GroupIcon fontSize="small" className="text-purple-800" /> },
-    { name: 'Continuous Learning', icon: <UpdateIcon fontSize="small" className="text-gray-800" /> },
+    { name: 'Express.js', icon: <GroupIcon fontSize="small" className="text-purple-800" /> },
+    { name: 'Continuous Learning', icon: <UpdateIcon fontSize="small" className="text-gray-800" /> ,},
   ];
 
   return (
-    <div className=" py-10 px-6 flex flex-col md:flex-row items-center bg-gray-100">
+    <div className=" py-10 px-6 flex flex-col md:flex-row items-center bg-gray-100" id="about-me">
       {/* Image Section */}
       <div className="w-full md:w-1/2  h-[400px] flex justify-center">
         <img 

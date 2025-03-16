@@ -5,8 +5,11 @@ import ServiceCards from './WhatIDo';
 import AboutMe from './AboutMe';
 import ContactMe from './Contact';
 import Portfolio from './Portfolio';
+import { useState } from 'react';
 
 function Body() {
+
+ 
   return (
     <div>
       <Navbar />
@@ -16,7 +19,10 @@ function Body() {
         <AboutMe />
         <Portfolio/>
         <ServiceCards />
-       <ContactMe/>
+        <ContactMe />
+        <footer className='h-[80px] bg-black text-white flex justify-center items-center'>
+            All rights reserved|Developed by Javeria Kanwal
+        </footer>
        
       </div>
     </div>

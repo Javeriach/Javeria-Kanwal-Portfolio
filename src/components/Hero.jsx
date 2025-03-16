@@ -1,17 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { LinkedIn, Twitter, GitHub } from '@mui/icons-material';
 import Javeriakanwal from '../assets/Javeriakanwal.png';
 import backgroundImage from '../assets/backgroundImage.avif';
 import { Link } from 'react-router-dom';
-
+import Aos from 'aos';
 const Hero = () => {
+
+ 
+  
   return (
     <section
       className="flex  flex-col-reverse items-center min-[920px]:flex-row justify-around py-16 px-8 min-[920px]:px-16  min-[920px]:flex-row h-[700px] min-[920px]:h-[600px] bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: `url(${backgroundImage})` }}
     >
       {/* Text Section */}
-      <div className="max-w-lg">
+      <div className="max-w-lg" data-aos="zoom-in">
         <p className="text-gray-400 uppercase tracking-wide mb-2">
           Welcome to my world
         </p>
@@ -48,8 +51,9 @@ const Hero = () => {
 
       {/* Image Section */}
       <div className=" md:mt-0">
-        <div className="relative">
+        <div className="relative"   data-aos="zoom-in">
           <img
+           
             src={Javeriakanwal}
             alt="Luca"
             className="w-64 md:w-[300px] h-64  md:h-[310px] rounded-full border-2 border-gray-100 "

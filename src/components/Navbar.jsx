@@ -48,6 +48,14 @@ function Navbar() {
     };
   });
 
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" }); // Smooth scrolling
+    }
+  };
+
+  
   return (
     <nav className="shadow-xl fixed w-full font-Roboto  z-[4000] bg-black text-white top-[0%] flex justify-between md:justify-start items-center    h-[80px]  md:pe-12">
       <div
@@ -67,9 +75,7 @@ function Navbar() {
           Home
         </Link>
 
-        <Link className="flex items-center text-[17px]" to={'/'}>
-          About
-        </Link>
+        
 
         <Link className="flex items-center text-[17px]" to={'/projects'}>
           Projects
@@ -129,18 +135,8 @@ function Navbar() {
             </Link>
             <div className="h-[1px] bg-black"></div>
 
-            {/* About Us*/}
-            <Link
-              className="font-medium cursor-pointer m-1 p-3 py-2 flex items-center justify-between hover:bg-gray-50 rounded-lg"
-              to="/"
-            >
-              <div className="flex items-center h-full w-full">
-                <LanguageIcon  className=" text-black "  sx={{ fontSize: 30 }} />
-                <label className="text-[20px] mt-1 ml-2  text-black ">About Me</label>
-              </div>
-
-              <ChevronRightIcon className=" text-black " sx={{ fontSize: 30 }} />
-            </Link>
+          
+           
 
             {/*---------Seperator Line */}
             <div className="h-[1px] bg-black"></div>
