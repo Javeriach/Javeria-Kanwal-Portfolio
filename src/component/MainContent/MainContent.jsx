@@ -1,5 +1,6 @@
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { NavLink } from "react-router-dom";
+import Javeria_kanwal from "../../Media/Javeria_Kanwal.png";
 const MainContent = () => {
   return (
     <div className=" flex w-full h-96  lg:h-fit">
@@ -25,10 +26,10 @@ const MainContent = () => {
             </NavLink>
           </div>
         </div>
-      </div>z
+      </div>
 
       <div className=" w-0 flex items-center sm:w-0 md:w-0 lg:w-[45vw] justify-start">
-        <img src="/src/Media/Javeria Kanwal.png" alt="" className="rounded-badge w-[350px]  h-[400px]" />
+        <img src={Javeria_kanwal} alt="" className="rounded-badge w-[350px]  h-[400px]" />
       </div>
     </div>
   );
