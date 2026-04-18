@@ -1,6 +1,6 @@
 import { IoMdArrowRoundForward } from "react-icons/io";
 import { NavLink } from "react-router-dom";
-import Javeria_kanwal from "../../Media/Javeria-kanwal.jpg";
+import Javeria_kanwal from "../../Media/Javeria-Kanwal.jpg";
 const MainContent = () => {
   return (
     <div className="flex flex-col lg:flex-row w-full min-h-[500px] lg:h-fit py-10 lg:py-20">
