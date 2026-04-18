@@ -7,7 +7,7 @@ const About = () => {
       <div className="sm:w-[80vw] lg:w-[40vw]">
         <h1 className="text-center lg:text-start  text-4xl lg:text-6xl font-semibold font-tektur">
           About{" "}
-          <span className="bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600 bg-clip-text text-transparent">
+          <span className="bg-gradient-to-b from-black via-gray-700 to-gray-400 bg-clip-text text-transparent">
             me
           </span>
         </h1>
@@ -22,19 +22,14 @@ const About = () => {
       </div>
       <div className="sm:w-[80vw] lg:w-[40vw] py-4 ">
         <h1 className="font-semibold  text-xl  px-8 lg:px-0 lg:text-2xl text-center lg:text-start">
-          I am a full stack mern developer based in Pakistan
+          Full Stack Software Engineer specializing in Node.js and Nest.js
         </h1>
-        <p className="mt-6 font-manrope font-normal text-base px-8 lg:px-0 text-justify  ">
+        <p className="mt-6 font-manrope font-normal text-base px-8 lg:px-0 text-start sm:text-justify  ">
           {" "}
-          I'm a Full Stack MERN Developer with a strong interest in building
-          clean, responsive, and user-friendly web applications using HTML, CSS,
-          JavaScript, React.js, and Tailwind CSS. I implement secure
-          authentication with Firebase and develop robust backend systems using
-          Node.js, Express.js, and MongoDB. I enjoy turning ideas into
-          real-world solutions that are both scalable and efficient.{" "}
+          I'm a Full Stack Software Engineer with over a year of experience specializing in building scalable APIs, AI-powered platforms, and cloud deployments on AWS. I have a deep understanding of designing backend systems, CI/CD pipelines, and full-stack architectures for production applications.{" "}
           <span
             onClick={() => setSeeLess(!seeLess)}
-            className="font-semibold cursor-pointer bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600 bg-clip-text text-transparent"
+            className="font-semibold cursor-pointer bg-gradient-to-b from-black via-gray-700 to-gray-400 bg-clip-text text-transparent"
           >
             {seeLess ? <>See More ...</> : <> </>}
           </span>{" "}
@@ -42,14 +37,10 @@ const About = () => {
             ""
           ) : (
             <>
-              I write clean code with a focus on the DRY{" "}
-              <span className="font-semibold">(Don't Repeat Yourself)</span>{" "}
-              principle ensuring maintainable and well-structured applications.
-              I'm always eager to learn new technologies and grow as a
-              developer.{" "}
+              Managed production infrastructure on AWS including EC2, RDS, ElastiCache, and ECR. I'm skilled in React.js, Next.js, and MongoDB/PostgreSQL, ensuring reliable and efficient delivery of complex technical solutions.{" "}
               <span
                 onClick={() => setSeeLess(!seeLess)}
-                className="font-semibold cursor-pointer bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600 bg-clip-text text-transparent"
+                className="font-semibold cursor-pointer bg-gradient-to-b from-black via-gray-700 to-gray-400 bg-clip-text text-transparent"
               >
                 {!seeLess ? <>See Less ...</> : <> </>}
               </span>

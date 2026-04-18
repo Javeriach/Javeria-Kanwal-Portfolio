@@ -74,7 +74,7 @@ const Navbar = () => {
             <div
               className={`p-[2px] ${
                 isAboutRoute
-                  ? "bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600"
+                  ? "bg-gradient-to-b from-black via-gray-700 to-gray-400"
                   : ""
               } rounded-full`}
             >
@@ -97,7 +97,7 @@ const Navbar = () => {
             <div
               className={`p-[2px] ${
                 isProjectsRoute
-                  ? "bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600"
+                  ? "bg-gradient-to-b from-black via-gray-700 to-gray-400"
                   : ""
               } rounded-full`}
             >
@@ -120,7 +120,7 @@ const Navbar = () => {
             <div
               className={`p-[2px] ${
                 isContactRoute
-                  ? "bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600"
+                  ? "bg-gradient-to-b from-black via-gray-700 to-gray-400"
                   : ""
               } rounded-full`}
             >

@@ -6,8 +6,8 @@ export default {
     extend: {
       backgroundImage: {
         gradientColor1:
-          "linear-gradient(360deg, rgba(160, 89, 255, 0) 0%, rgba(136, 0, 255, 0.1) 100%)",
-        gradientColor2: "linear-gradient(90deg, #8800FF 0%, #FF00C1 100%)",
+          "linear-gradient(360deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.1) 100%)",
+        gradientColor2: "linear-gradient(90deg, #000000 0%, #666666 100%)",
       },
 
       fontFamily: {

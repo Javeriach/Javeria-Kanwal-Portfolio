@@ -1,98 +1,132 @@
 import { useState, useEffect } from "react";
-import { FaArrowRight } from "react-icons/fa6";
+import { FaArrowRight, FaXmark, FaCheck } from "react-icons/fa6";
 import { MdArrowOutward } from "react-icons/md";
 
 // Import Images
-import ShazaibTechnologies from "../../Media/ShazaibTechnologies.webp";
-import WeatherApp from "../../Media/WeatherApp.png";
-import QuranApp from "../../Media/QuranApp.png";
-import ImageGallery from "../../Media/ImageGallery.png";
-import PasswordGenerater from "../../Media/PasswordGenerater.png";
-import TaskTracker from "../../Media/TaskTracker.png";
-import TriaviaMaster from "../../Media/TriaviaMaster.png";
-import Tenzies from "../../Media/Tenzies.png";
-import MovieWorld from "../../Media/MovieWorld.png";
+import OneOrbIO from "../../Media/Oneorbio.png";
+import BoxtechAI from "../../Media/Boxtech.png";
+import OneOrbAI from "../../Media/Oneorbai.png";
+import Navio from "../../Media/Navio.png";
+import Image2Video from "../../Media/image2video.png";
+import WorkPilot from "../../Media/workpilot.png";
+import Biodock from "../../Media/Biodock.png";
 
 const Project = () => {
   const [showAll, setShowAll] = useState(false);
   const [isXLScreen, setIsXLScreen] = useState(false);
+  const [selectedProject, setSelectedProject] = useState(null);
 
   const projectsDetails = [
     {
       _id: 1,
-      projectImg: ShazaibTechnologies,
-      projectTitle: "Shazaib Technologies",
-      projectDes: "Shazaib Technologies is an eCommerce website built with HTML, CSS, and TailwindCSS.",
+      projectImg: OneOrbIO,
+      projectTitle: "OneOrb.io",
+      projectRole: "Associate Software Engineer",
+      projectDes: "AI application builder that generates full-stack applications from prompts using Claude and sandboxed environments.",
+      projectTasks: [
+        "Built an AI application builder that generates full-stack applications from natural language prompts using Claude AI.",
+        "Implemented code generation workflows and executed backend services inside e2b sandbox environments.",
+        "Enabled frontend execution and live previews using CodeSandbox with dynamically generated endpoints.",
+        "Developed an iterative AI chat workflow allowing real-time modification of generated code across sandboxes.",
+        "Designed full CI/CD pipelines and deployed production infrastructure using AWS EC2, ECR, and RDS."
+      ],
       liveProjectCheckContent: "Check Live Site",
-      liveProjectCheckUrl: "https://shazaib-technologies.vercel.app/",
+      liveProjectCheckUrl: "https://www.oneorb.ai/",
     },
     {
       _id: 2,
-      projectImg: WeatherApp,
-      projectTitle: "Weather App",
-      projectDes: "A real-time climate tracking app developed with HTML, CSS, and JavaScript.",
+      projectImg: BoxtechAI,
+      projectTitle: "Boxtech.ai",
+      projectRole: "Software Engineer",
+      projectDes: "AI-powered chatbot for vehicle tracking that converts natural language queries into MongoDB queries.",
+      projectTasks: [
+        "Developed an AI-powered chatbot capable of answering complex user queries related to vehicle tracking data.",
+        "Implemented a system that converts natural language queries into MongoDB queries and returns natural language responses.",
+        "Managed custom MongoDB deployments on AWS EC2, including configuration, scaling, and maintenance.",
+        "Implemented automated backup and disaster recovery strategies using Percona Backup for MongoDB (PBM).",
+        "Set up monitoring and alerting infrastructure using Prometheus and Grafana to ensure system reliability."
+      ],
       liveProjectCheckContent: "Check Live Site",
-      liveProjectCheckUrl: "https://real-time-weather-app-5w4h-nu0md7xfg-javeriachs-projects.vercel.app/",
+      liveProjectCheckUrl: "https://www.boxtech.ai/",
     },
     {
       _id: 3,
-      projectImg: QuranApp,
-      projectTitle: "Quran App",
-      projectDes: "Quran App built with HTML, CSS, and JavaScript to browse and read Quranic verses.",
+      projectImg: OneOrbAI,
+      projectTitle: "OneOrb.ai",
+      projectRole: "Associate Software Engineer",
+      projectDes: "Recruiter outreach platform with automated email sequencing and engagement tracking using SendGrid.",
+      projectTasks: [
+        "Built recruiter outreach features including automated email sequencing and global outreach scheduling using SendGrid.",
+        "Implemented event tracking for delivered, opened, and clicked emails to measure candidate engagement.",
+        "Designed backend microservices and automated deployment pipelines using AWS infrastructure.",
+        "Focused on improving recruiter productivity by enabling automated and tracked global outreach campaigns."
+      ],
       liveProjectCheckContent: "Check Live Site",
-      liveProjectCheckUrl: "https://quran-app-b7kk.vercel.app/",
+      liveProjectCheckUrl: "https://www.oneorb.ai/",
     },
     {
       _id: 4,
-      projectImg: ImageGallery,
-      projectTitle: "Image Gallery",
-      projectDes: "An interactive image gallery using HTML, CSS, and JavaScript.",
+      projectImg: Navio,
+      projectTitle: "Navio",
+      projectRole: "Software Engineer",
+      projectDes: "AI-powered browser assistant providing contextual guidance and automation with screenshot-based querying.",
+      projectTasks: [
+        "Contributed to the development of an AI-powered browser assistant (Navio/Assist) for contextual guidance.",
+        "Implemented screenshot-based querying and automation workflows to improve user interaction with web pages.",
+        "Built execution pipelines for AI-generated browser automations, enabling seamless web task completion.",
+        "Optimized extension-to-backend communication for low-latency AI responses."
+      ],
       liveProjectCheckContent: "Check Live Site",
-      liveProjectCheckUrl: "https://image-gallery-rosy.vercel.app/",
+      liveProjectCheckUrl: "https://assistance.oneorb.io/",
     },
     {
       _id: 5,
-      projectImg: PasswordGenerater,
-      projectTitle: "Password Generator",
-      projectDes: "Secure password generator made with HTML, CSS, and JavaScript.",
+      projectImg: Image2Video,
+      projectTitle: "Image2Video",
+      projectRole: "Associate Software Engineer",
+      projectDes: "AI-powered platform that converts static images into videos with automated AWS deployment pipelines.",
+      projectTasks: [
+        "Deployed and managed an AI-powered platform designed to convert static images into dynamic videos.",
+        "Designed CI/CD pipelines and automated deployment workflows using AWS EC2, ECR, and RDS.",
+        "Ensured reliable updates and stable production releases with automated health checks and minimal intervention.",
+        "Integrated AI model serving infrastructure with cloud-native monitoring for performance optimization."
+      ],
       liveProjectCheckContent: "Check Live Site",
-      liveProjectCheckUrl: "https://random-password-generator-delta.vercel.app/",
+      liveProjectCheckUrl: "https://image2video.oneorb.ai/",
     },
     {
       _id: 6,
-      projectImg: TaskTracker,
-      projectTitle: "Task Tracker",
-      projectDes: "A task management tool built with HTML, CSS, and JavaScript.",
+      projectImg: WorkPilot,
+      projectTitle: "WorkPilot",
+      projectRole: "Software Engineer",
+      projectDes: "Workforce management system with time tracking, activity monitoring, and performance analytics.",
+      projectTasks: [
+        "Developed a scalable workforce management system similar to Hubstaff for distributed team monitoring.",
+        "Built backend services for high-accuracy time tracking, user activity monitoring, and performance analytics.",
+        "Contributed to system design and development focusing on scalability and reliable data handling.",
+        "Delivered a functional productivity tracking platform enabling better workforce visibility for management."
+      ],
       liveProjectCheckContent: "Check Live Site",
-      liveProjectCheckUrl: "https://task-tracker-2v62.vercel.app/",
+      liveProjectCheckUrl: "https://work-pilot-77a086b7534f.herokuapp.com/",
     },
     {
       _id: 7,
-      projectImg: TriaviaMaster,
-      projectTitle: "Trivia Master",
-      projectDes: "Trivia quiz game built with React.js, HTML, CSS, and JavaScript.",
+      projectImg: Biodock,
+      projectRole: "Software Engineer",
+      projectTitle: "Biodock",
+      projectDes: "Focused on system stability and CI/CD pipelines for large-scale AI platform workflows.",
+      projectTasks: [
+        "Contributed to improving system stability by resolving complex code issues and fixing production errors.",
+        "Maintained and stabilized CI/CD production pipelines for large-scale AI platform workflows.",
+        "Ensured reliable execution of platform workflows by debugging and stabilizing mission-critical pipelines.",
+        "Implemented proactive monitoring to identify and resolve potential failures before they impact production."
+      ],
       liveProjectCheckContent: "Check Live Site",
-      liveProjectCheckUrl: "https://triavia-master-g5vt.vercel.app/",
-    },
-    {
-      _id: 8,
-      projectImg: Tenzies,
-      projectTitle: "Tenzies",
-      projectDes: "Tenzies game developed with React.js, HTML, CSS, and JavaScript.",
-      liveProjectCheckContent: "Check Live Site",
-      liveProjectCheckUrl: "https://tenzies-alpha-livid.vercel.app/",
-    },
-    {
-      _id: 9,
-      projectImg: MovieWorld,
-      projectTitle: "Movie World",
-      projectDes: "A movie browsing website built with React.js, HTML, CSS, and JavaScript.",
-      liveProjectCheckContent: "Check Live Site",
-      liveProjectCheckUrl: "https://movie-world-jcad.vercel.app/",
+      liveProjectCheckUrl: "https://www.biodock.ai/",
     },
   ];
 
-  projectsDetails.reverse();
+  const sortedProjects = [...projectsDetails].reverse();
 
   useEffect(() => {
     const checkScreenSize = () => {
@@ -104,13 +138,13 @@ const Project = () => {
   }, []);
 
   const visibleProjects =
-    isXLScreen || showAll ? projectsDetails : projectsDetails.slice(0, 4);
+    isXLScreen || showAll ? sortedProjects : sortedProjects.slice(0, 4);
 
   return (
     <div className="w-full px-4 pt-3 pb-8 min-h-screen">
-      <h1 className="text-center text-3xl lg:text-6xl font-semibold font-tektur pt-3 pb-10">
+      <h1 className="text-center text-3xl lg:text-6xl font-semibold font-tektur pt-3 pb-10" data-aos="zoom-in">
         Featured{" "}
-        <span className="bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-b from-black via-gray-700 to-gray-400 bg-clip-text text-transparent">
           Projects
         </span>
       </h1>
@@ -123,8 +157,8 @@ const Project = () => {
               projectImg={p.projectImg}
               projectTitle={p.projectTitle}
               projectDes={p.projectDes}
-              liveProjectCheckContent={p.liveProjectCheckContent}
-              liveProjectCheckUrl={p.liveProjectCheckUrl}
+              projectRole={p.projectRole}
+              onClick={() => setSelectedProject(p)}
             />
           ))}
         </div>
@@ -133,7 +167,7 @@ const Project = () => {
           <div className="flex justify-center mt-2">
             <button
               onClick={() => setShowAll((prev) => !prev)}
-              className="flex items-center mt-4 gap-2 font-semibold text-white bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600 px-5 py-3 rounded-full"
+              className="flex items-center mt-4 gap-2 font-semibold text-white bg-gradient-to-b from-black via-gray-700 to-gray-400 px-5 py-3 rounded-full"
             >
               <span>{showAll ? "LOAD LESS" : "LOAD MORE"}</span>
               <FaArrowRight
@@ -143,6 +177,78 @@ const Project = () => {
           </div>
         )}
       </div>
+
+      {/* Modal Overlay */}
+      {selectedProject && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-300"
+          onClick={() => setSelectedProject(null)}
+        >
+          <div 
+            className="bg-white rounded-3xl overflow-hidden max-w-2xl w-full max-h-[90vh] shadow-2xl transform transition-all animate-in zoom-in-95 duration-300 flex flex-col"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative flex-shrink-0">
+              <img 
+                src={selectedProject.projectImg} 
+                alt={selectedProject.projectTitle} 
+                className="w-full h-48 sm:h-64 object-cover"
+              />
+              <button 
+                onClick={() => setSelectedProject(null)}
+                className="absolute top-4 right-4 p-2 bg-black/20 hover:bg-black/40 backdrop-blur-md rounded-full text-white transition-colors"
+              >
+                <FaXmark size={20} />
+              </button>
+            </div>
+            
+            <div className="p-6 sm:p-8 overflow-y-auto custom-scrollbar">
+              <div className="flex flex-col sm:flex-row justify-between items-start mb-6 gap-4">
+                <div>
+                  <h2 className="text-2xl sm:text-3xl font-tektur font-bold text-gray-900 mb-2">
+                    {selectedProject.projectTitle}
+                  </h2>
+                  <div className="inline-block px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-semibold">
+                    {selectedProject.projectRole}
+                  </div>
+                </div>
+                <a 
+                  href={selectedProject.liveProjectCheckUrl} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-800 transition-colors shadow-lg shadow-black/10"
+                >
+                  <span>Live Site</span>
+                  <MdArrowOutward />
+                </a>
+              </div>
+              
+              <div className="space-y-6">
+                <section>
+                  <h4 className="font-tektur font-bold text-gray-900 mb-2 uppercase tracking-wide text-sm">Project Overview</h4>
+                  <p className="text-gray-600 leading-relaxed text-start sm:text-justify">
+                    {selectedProject.projectDes}
+                  </p>
+                </section>
+
+                <section>
+                  <h4 className="font-tektur font-bold text-gray-900 mb-3 uppercase tracking-wide text-sm">Key Responsibilities & Achievements</h4>
+                  <ul className="space-y-3">
+                    {selectedProject.projectTasks.map((task, index) => (
+                      <li key={index} className="flex items-start gap-3 text-gray-600">
+                        <span className="mt-1.5 flex-shrink-0 w-4 h-4 rounded-full bg-gray-100 flex items-center justify-center text-[10px] text-gray-900">
+                          <FaCheck />
+                        </span>
+                        <span className="text-sm sm:text-base leading-relaxed">{task}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
@@ -151,32 +257,40 @@ const ProjDetail = ({
   projectImg,
   projectTitle,
   projectDes,
-  liveProjectCheckContent,
-  liveProjectCheckUrl,
+  projectRole,
+  onClick
 }) => {
   return (
-    <div className="card bg-[#0000001A] w-[20rem] sm:[22rem] md:w-[23rem] shadow-sm font-manrope">
-      <figure className="px-5 pt-5">
+    <div 
+      className="card bg-[#0000001A] w-[20rem] sm:[22rem] md:w-[23rem] shadow-sm font-manrope cursor-pointer group hover:shadow-md transition-all duration-300" 
+      data-aos="fade-up"
+      onClick={onClick}
+    >
+      <figure className="px-5 pt-5 relative overflow-hidden">
         <img
           src={projectImg}
           alt={projectTitle}
-          className="rounded-xl w-[35rem] h-[10rem] object-cover"
+          className="rounded-xl w-full h-[10rem] object-cover transition-transform duration-500 group-hover:scale-105"
         />
+        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 rounded-xl mx-5 mt-5"></div>
       </figure>
-      <div className="my-0 py-4 px-6 ">
-        <h2 className="text-start text-xl font-tektur font-semibold">
-          {projectTitle}
-        </h2>
-        <p className="text-justify text-base line-clamp-2 font-manrope">
+      <div className="my-0 py-4 px-6">
+        <div className="flex justify-between items-center mb-1">
+          <h2 className="text-start text-xl font-tektur font-semibold group-hover:text-gray-900 transition-colors">
+            {projectTitle}
+          </h2>
+        </div>
+        <div className="text-xs font-semibold text-gray-500 mb-2 uppercase tracking-wider">
+          {projectRole}
+        </div>
+        <p className="text-start sm:text-justify text-base line-clamp-2 font-manrope text-gray-600">
           {projectDes}
         </p>
         <div className="flex justify-start md:justify-end font-semibold w-full my-3">
-          <a href={liveProjectCheckUrl} target="_blank" rel="noopener noreferrer">
-            <button className="flex items-center bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600 bg-clip-text text-transparent">
-              <span>{liveProjectCheckContent}</span>
-              <MdArrowOutward className="ml-2 text-[#8800FF]" />
-            </button>
-          </a>
+          <button className="flex items-center bg-gradient-to-b from-black via-gray-700 to-gray-400 bg-clip-text text-transparent group-hover:scale-105 transition-transform">
+            <span>View Details</span>
+            <MdArrowOutward className="ml-2 text-gray-900" />
+          </button>
         </div>
       </div>
     </div>

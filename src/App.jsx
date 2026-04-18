@@ -1,4 +1,6 @@
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import AOS from "aos";
 
 // internal imports
 
@@ -9,6 +11,13 @@ import Projects from "./component/Projects/Project";
 import Contact from "./component/Contact/Contact";
 import {Toaster } from "react-hot-toast";
 function App() {
+  useEffect(() => {
+    AOS.init({
+      duration: 1000,
+      once: true,
+    });
+  }, []);
+
   return (
     <div className=" font-trebuchet bg-gradientColor1">
       <Toaster

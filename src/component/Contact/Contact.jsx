@@ -37,17 +37,17 @@ const Contact = () => {
           <div className="max-[900px]:w-full w-[40vw] max-[900px]:px-3 mb-5">
             <h1 className="text-5xl max-[900px]:text-3xl font-tektur font-semibold max-[900px]:text-center text-start">
               Let's{" "}
-              <span className="bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-b from-black via-gray-700 to-gray-400 bg-clip-text text-transparent">
                 Connect
               </span>
             </h1>
             <p className="font-manrope py-2 max-[900px]:text-center text-start">
               <span className="text-[#686868]">Contact me at</span>{" "}
               <a
-                href="mailto:javeriakanwal383@gmail.com"
+                href="mailto:javeriakanwal976@gmail.com"
                 className="font-semibold cursor-pointer"
               >
-                javeriakanwal383@gmail.com
+                javeriakanwal976@gmail.com
               </a>
             </p>
             <p className="font-manrope pb-2 max-[900px]:text-center text-start">
@@ -63,10 +63,10 @@ const Contact = () => {
 
             <div className="flex items-center gap-4 pt-2 max-[900px]:justify-center text-start">
               <a href="https://www.linkedin.com/in/javeria-kanwal-bbb4b3243" target="_blank" rel="noopener noreferrer">
-                <IoLogoLinkedin className="text-3xl text-[#8800FF]" />
+                <IoLogoLinkedin className="text-3xl text-gray-900" />
               </a>
               <a href="https://github.com/Javeriach" target="_blank" rel="noopener noreferrer">
-                <FaSquareGithub className="text-3xl text-[#8800FF]" />
+                <FaSquareGithub className="text-3xl text-gray-900" />
               </a>
             </div>
           </div>
@@ -117,7 +117,7 @@ const Contact = () => {
               <div className="flex justify-center mt-3 lg:justify-start">
                 <button
                   type="submit"
-                  className="flex items-center mt-4 gap-1 font-semi text-white bg-gradient-to-b from-gray-900 via-purple-900 to-violet-600 px-4 py-3 rounded-full"
+                  className="flex items-center mt-4 gap-1 font-semi text-white bg-gradient-to-b from-black via-gray-700 to-gray-400 px-4 py-3 rounded-full"
                 >
                   <span>SUBMIT</span>
                   <IoMdArrowRoundForward />
