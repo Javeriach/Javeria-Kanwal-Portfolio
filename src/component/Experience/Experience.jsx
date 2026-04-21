@@ -8,7 +8,7 @@ const ExperienceCard = ({ exp, index }) => {
   return (
     <div 
       className="relative pl-8 border-l-2 border-gray-100 pb-2"
-      data-aos="fade-left"
+      data-aos="fade-up"
       data-aos-delay={index * 100}
     >
       {/* Timeline Dot */}
