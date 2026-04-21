@@ -20,9 +20,10 @@ const Project = () => {
     {
       _id: 1,
       projectImg: OneOrbIO,
-      projectTitle: "OneOrb.io",
-      projectRole: "Associate Software Engineer",
+      projectTitle: "GenStack: Autonomous App Architect",
+      projectRole: "Software Engineer",
       projectDes: "AI application builder that generates full-stack applications from prompts using Claude and sandboxed environments.",
+      isClientProject: true,
       projectTasks: [
         "Built an AI application builder that generates full-stack applications from natural language prompts using Claude AI.",
         "Implemented code generation workflows and executed backend services inside e2b sandbox environments.",
@@ -39,6 +40,7 @@ const Project = () => {
       projectTitle: "Boxtech.ai",
       projectRole: "Software Engineer",
       projectDes: "AI-powered chatbot for vehicle tracking that converts natural language queries into MongoDB queries.",
+      isClientProject: false,
       projectTasks: [
         "Developed an AI-powered chatbot capable of answering complex user queries related to vehicle tracking data.",
         "Implemented a system that converts natural language queries into MongoDB queries and returns natural language responses.",
@@ -52,9 +54,10 @@ const Project = () => {
     {
       _id: 3,
       projectImg: OneOrbAI,
-      projectTitle: "OneOrb.ai",
-      projectRole: "Associate Software Engineer",
+      projectTitle: "ReachOut: Automated Sequence Engine",
+      projectRole: "Software Engineer",
       projectDes: "Recruiter outreach platform with automated email sequencing and engagement tracking using SendGrid.",
+      isClientProject: true,
       projectTasks: [
         "Built recruiter outreach features including automated email sequencing and global outreach scheduling using SendGrid.",
         "Implemented event tracking for delivered, opened, and clicked emails to measure candidate engagement.",
@@ -67,11 +70,12 @@ const Project = () => {
     {
       _id: 4,
       projectImg: Navio,
-      projectTitle: "Navio",
+      projectTitle: "ContextFlow (Browser Extension)",
       projectRole: "Software Engineer",
       projectDes: "AI-powered browser assistant providing contextual guidance and automation with screenshot-based querying.",
+      isClientProject: true,
       projectTasks: [
-        "Contributed to the development of an AI-powered browser assistant (Navio/Assist) for contextual guidance.",
+        "Contributed to the development of an AI-powered browser assistant for contextual guidance and automation.",
         "Implemented screenshot-based querying and automation workflows to improve user interaction with web pages.",
         "Built execution pipelines for AI-generated browser automations, enabling seamless web task completion.",
         "Optimized extension-to-backend communication for low-latency AI responses."
@@ -83,8 +87,9 @@ const Project = () => {
       _id: 5,
       projectImg: Image2Video,
       projectTitle: "Image2Video",
-      projectRole: "Associate Software Engineer",
+      projectRole: "Software Engineer",
       projectDes: "AI-powered platform that converts static images into videos with automated AWS deployment pipelines.",
+      isClientProject: true,
       projectTasks: [
         "Deployed and managed an AI-powered platform designed to convert static images into dynamic videos.",
         "Designed CI/CD pipelines and automated deployment workflows using AWS EC2, ECR, and RDS.",
@@ -97,9 +102,10 @@ const Project = () => {
     {
       _id: 6,
       projectImg: WorkPilot,
-      projectTitle: "WorkPilot",
+      projectTitle: "SyncMetrics",
       projectRole: "Software Engineer",
       projectDes: "Workforce management system with time tracking, activity monitoring, and performance analytics.",
+      isClientProject: true,
       projectTasks: [
         "Developed a scalable workforce management system similar to Hubstaff for distributed team monitoring.",
         "Built backend services for high-accuracy time tracking, user activity monitoring, and performance analytics.",
@@ -115,6 +121,7 @@ const Project = () => {
       projectRole: "Software Engineer",
       projectTitle: "Biodock",
       projectDes: "Focused on system stability and CI/CD pipelines for large-scale AI platform workflows.",
+      isClientProject: false,
       projectTasks: [
         "Contributed to improving system stability by resolving complex code issues and fixing production errors.",
         "Maintained and stabilized CI/CD production pipelines for large-scale AI platform workflows.",
@@ -142,7 +149,7 @@ const Project = () => {
 
   return (
     <div className="w-full px-4 pt-3 pb-8 min-h-screen">
-      <h1 className="text-center text-3xl lg:text-6xl font-semibold font-tektur pt-3 pb-10" data-aos="zoom-in">
+      <h1 className="text-center text-3xl lg:text-5xl font-semibold font-tektur pt-3 pb-10" data-aos="zoom-in">
         Featured{" "}
         <span className="bg-gradient-to-b from-black via-gray-700 to-gray-400 bg-clip-text text-transparent">
           Projects
@@ -158,6 +165,7 @@ const Project = () => {
               projectTitle={p.projectTitle}
               projectDes={p.projectDes}
               projectRole={p.projectRole}
+              isClientProject={p.isClientProject}
               onClick={() => setSelectedProject(p)}
             />
           ))}
@@ -180,28 +188,36 @@ const Project = () => {
 
       {/* Modal Overlay */}
       {selectedProject && (
-        <div 
+        <div
           className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-in fade-in duration-300"
           onClick={() => setSelectedProject(null)}
         >
-          <div 
+          <div
             className="bg-white rounded-3xl overflow-hidden max-w-2xl w-full max-h-[90vh] shadow-2xl transform transition-all animate-in zoom-in-95 duration-300 flex flex-col"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="relative flex-shrink-0">
-              <img 
-                src={selectedProject.projectImg} 
-                alt={selectedProject.projectTitle} 
-                className="w-full h-48 sm:h-64 object-cover"
-              />
-              <button 
+              {selectedProject.isClientProject ? (
+                <div className="w-full h-48 sm:h-64 bg-gradient-to-br from-gray-100 to-gray-200 flex items-center justify-center p-8 text-center border-b border-gray-100">
+                  <div className="text-2xl sm:text-3xl font-tektur font-bold text-gray-400/60 uppercase tracking-tighter italic">
+                    {selectedProject.projectTitle}
+                  </div>
+                </div>
+              ) : (
+                <img
+                  src={selectedProject.projectImg}
+                  alt={selectedProject.projectTitle}
+                  className="w-full h-48 sm:h-64 object-cover"
+                />
+              )}
+              <button
                 onClick={() => setSelectedProject(null)}
                 className="absolute top-4 right-4 p-2 bg-black/20 hover:bg-black/40 backdrop-blur-md rounded-full text-white transition-colors"
-              >
+               >
                 <FaXmark size={20} />
               </button>
             </div>
-            
+
             <div className="p-6 sm:p-8 overflow-y-auto custom-scrollbar">
               <div className="flex flex-col sm:flex-row justify-between items-start mb-6 gap-4">
                 <div>
@@ -211,18 +227,21 @@ const Project = () => {
                   <div className="inline-block px-3 py-1 rounded-full bg-gray-100 text-gray-700 text-sm font-semibold">
                     {selectedProject.projectRole}
                   </div>
+                  {/* Client project disclaimer removed as per user request */}
                 </div>
-                <a 
-                  href={selectedProject.liveProjectCheckUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="w-full sm:w-auto flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-800 transition-colors shadow-lg shadow-black/10"
-                >
-                  <span>Live Site</span>
-                  <MdArrowOutward />
-                </a>
+                {!selectedProject.isClientProject && (
+                  <a
+                    href={selectedProject.liveProjectCheckUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full sm:w-auto flex items-center justify-center gap-2 bg-black text-white px-6 py-3 rounded-xl font-semibold hover:bg-gray-800 transition-colors shadow-lg shadow-black/10"
+                  >
+                    <span>Live Site</span>
+                    <MdArrowOutward />
+                  </a>
+                )}
               </div>
-              
+
               <div className="space-y-6">
                 <section>
                   <h4 className="font-tektur font-bold text-gray-900 mb-2 uppercase tracking-wide text-sm">Project Overview</h4>
@@ -258,21 +277,30 @@ const ProjDetail = ({
   projectTitle,
   projectDes,
   projectRole,
+  isClientProject,
   onClick
 }) => {
   return (
-    <div 
-      className="card bg-[#0000001A] w-[20rem] sm:[22rem] md:w-[23rem] shadow-sm font-manrope cursor-pointer group hover:shadow-md transition-all duration-300" 
+    <div
+      className="card bg-[#0000001A] w-[20rem] sm:[22rem] md:w-[23rem] shadow-sm font-manrope cursor-pointer group hover:shadow-md transition-all duration-300"
       data-aos="fade-up"
       onClick={onClick}
     >
       <figure className="px-5 pt-5 relative overflow-hidden">
-        <img
-          src={projectImg}
-          alt={projectTitle}
-          className="rounded-xl w-full h-[10rem] object-cover transition-transform duration-500 group-hover:scale-105"
-        />
-        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 rounded-xl mx-5 mt-5"></div>
+        {isClientProject ? (
+          <div className="rounded-xl w-full h-[10rem] bg-gradient-to-br from-gray-100/50 to-gray-200/50 flex flex-col items-center justify-center p-4 border border-gray-100 transition-transform duration-500 group-hover:scale-105">
+             <div className="text-sm font-tektur font-bold text-gray-400/80 text-center uppercase tracking-tighter italic px-2">
+               {projectTitle}
+             </div>
+          </div>
+        ) : (
+          <img
+            src={projectImg}
+            alt={projectTitle}
+            className="rounded-xl w-full h-[10rem] object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+        )}
+        {!isClientProject && <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 rounded-xl mx-5 mt-5"></div>}
       </figure>
       <div className="my-0 py-4 px-6">
         <div className="flex justify-between items-center mb-1">
@@ -286,6 +314,7 @@ const ProjDetail = ({
         <p className="text-start sm:text-justify text-base line-clamp-2 font-manrope text-gray-600">
           {projectDes}
         </p>
+        {/* Client project tag removed as per user request */}
         <div className="flex justify-start md:justify-end font-semibold w-full my-3">
           <button className="flex items-center bg-gradient-to-b from-black via-gray-700 to-gray-400 bg-clip-text text-transparent group-hover:scale-105 transition-transform">
             <span>View Details</span>

@@ -5,7 +5,7 @@ const About = () => {
   return (
     <div className=" mt-6 sm:flex sm:flex-col lg:flex-row  items-center   justify-center mb-10 w-full">
       <div className="sm:w-[80vw] lg:w-[40vw]">
-        <h1 className="text-center lg:text-start  text-4xl lg:text-6xl font-semibold font-tektur">
+        <h1 className="text-center lg:text-start text-3xl lg:text-5xl font-semibold font-tektur">
           About{" "}
           <span className="bg-gradient-to-b from-black via-gray-700 to-gray-400 bg-clip-text text-transparent">
             me
@@ -26,7 +26,7 @@ const About = () => {
         </h1>
         <p className="mt-6 font-manrope font-normal text-base px-8 lg:px-0 text-start sm:text-justify  ">
           {" "}
-          I'm a Full Stack Software Engineer with over a year of experience specializing in building scalable APIs, AI-powered platforms, and cloud deployments on AWS. I have a deep understanding of designing backend systems, CI/CD pipelines, and full-stack architectures for production applications.{" "}
+          I'm a Full Stack Software Engineer with a year of experience specializing in building scalable APIs, AI-powered platforms, and cloud deployments on AWS. I have a deep expertise in designing backend systems, CI/CD pipelines, and full-stack architectures for production applications.{" "}
           <span
             onClick={() => setSeeLess(!seeLess)}
             className="font-semibold cursor-pointer bg-gradient-to-b from-black via-gray-700 to-gray-400 bg-clip-text text-transparent"
@@ -37,7 +37,7 @@ const About = () => {
             ""
           ) : (
             <>
-              Managed production infrastructure on AWS including EC2, RDS, ElastiCache, and ECR. I'm skilled in React.js, Next.js, and MongoDB/PostgreSQL, ensuring reliable and efficient delivery of complex technical solutions.{" "}
+              Skilled in Node.js, Nest.js, React.js, and Next.js, with extensive experience managing production infrastructure on AWS (EC2, RDS, ElastiCache, ECR). I focus on delivering reliable, efficient, and scalable technical solutions.{" "}
               <span
                 onClick={() => setSeeLess(!seeLess)}
                 className="font-semibold cursor-pointer bg-gradient-to-b from-black via-gray-700 to-gray-400 bg-clip-text text-transparent"

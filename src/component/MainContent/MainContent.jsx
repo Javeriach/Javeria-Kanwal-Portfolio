@@ -3,17 +3,18 @@ import { NavLink } from "react-router-dom";
 import Javeria_kanwal from "../../Media/Javeria-Kanwal.jpg";
 const MainContent = () => {
   return (
-    <div className="flex flex-col lg:flex-row w-full min-h-[500px] lg:h-fit py-10 lg:py-20">
-      <div className="w-full lg:w-[60vw] flex justify-center items-center px-6 lg:px-0 order-2 lg:order-1 mt-10 lg:mt-0">
+    <div className="flex flex-col lg:flex-row items-center justify-center w-full min-h-[550px] lg:h-[85vh] py-10 lg:py-0">
+      <div className="w-full lg:w-[60vw] flex justify-center items-center px-6 lg:px-0 order-2 lg:order-1 mt-12 lg:mt-20">
         <div className="w-[90vw] sm:w-[80vw] lg:w-[40vw]" data-aos="fade-right">
-          <h1 className="font-tektur text-center lg:text-start font-semibold text-3xl sm:text-4xl lg:text-7xl">
-            Hi, I'm Javeria-Kanwal-{" "}
-            <span className="bg-gradient-to-b from-black via-gray-700 to-gray-400 bg-clip-text text-transparent">
-              Full Stack Software-Engineer
+          <h1 className="font-tektur text-center lg:text-start font-semibold text-2xl sm:text-3xl lg:text-5xl">
+            Hi, I'm Javeria Kanwal
+            <br />
+            <span className="bg-gradient-to-b from-black via-gray-700 to-gray-400 bg-clip-text text-transparent leading-tight">
+              Full Stack Software Engineer
             </span>
           </h1>
-          <p className="font-manrope text-base sm:text-xl text-center lg:text-start font-normal my-4 lg:my-6">
-            Specializing in Node.js, Nest.js, and AI-powered platforms with a focus on scalable full-stack architectures and cloud deployments.
+          <p className="font-manrope text-sm sm:text-lg text-center lg:text-start font-normal my-4 lg:my-6">
+            Specializing in Node.js, Nest.js, and AI-powered platforms with a focus on scalable full-stack architectures and cloud deployments on AWS.
           </p>
           <div className="flex justify-center lg:justify-start">
             <NavLink to="contact">
